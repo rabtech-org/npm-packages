@@ -20,17 +20,17 @@ _This is only a shareable configuration. It does not install Prettier or any oth
 
 ```javascript
 // `prettier.config.js` or `.prettierrc.js`
-module.exports = "@rabtech/prettier-config-standard";
+module.exports = '@rabtech/prettier-config-standard';
 ```
 
 If you want to override or add some configuration
 
 ```javascript
 // `prettier.config.js` or `.prettierrc.js`
-const rabtechConfigStandard = require("@rabtech/prettier-config-standard");
+const rabtechConfigStandard = require('@rabtech/prettier-config-standard');
 
 module.exports = {
-  ...rabtechConfigStandard,
-  semi: false,
+    ...rabtechConfigStandard,
+    semi: false,
 };
 ```
