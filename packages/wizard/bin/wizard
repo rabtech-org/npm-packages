@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+const { resolve, join } = require("path");
+
+const cliRoot = resolve(`${__dirname}/..`);
+
+/**
+ * If you run the CLI in the npm-packages repository, it will get local CLI package instead of remote package and there may be no build.
+ * This code ensures that the CLI is available locally.
+ */
+try {
+  // check if the CLI is running in local
+  require("fs").statSync(join(cliRoot, "src")).isDirectory();
+  // build the CLI
+  require("child_process").execSync("npm run build", { cwd: cliRoot });
+} catch {}
+
+/**
+ * Running the CLI.
+ */
+require(join(cliRoot, "lib", "wizard"));

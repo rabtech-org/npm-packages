@@ -1,0 +1,48 @@
+{
+  "name": "npm-packages",
+  "private": true,
+  "homepage": "https://gitlab.com/rabtech/kick-reserve-libraries/npm-packages",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/rabtech/kick-reserve-libraries/npm-packages.git"
+  },
+  "author": {
+    "name": "Francesco Rabezzano",
+    "email": "rabezzano.francesco@gmail.com"
+  },
+  "workspaces": [
+    "packages/*",
+    "!packages/wizard/templates"
+  ],
+  "scripts": {
+    "cm": "cz",
+    "format:fix": "npm run format --workspaces --if-present -- --check=false --write",
+    "lint:fix": "npm run lint --workspaces --if-present -- --fix",
+    "add:job": "node ./scripts/add-jobs-ci",
+    "postinstall": "node ./scripts/postinstall.js",
+    "semantic-release": "multi-semantic-release",
+    "rm:node_modules": "npm exec --workspaces -- npx rimraf node_modules && npx rimraf node_modules"
+  },
+  "engines": {
+    "node": ">=20",
+    "npm": ">=8"
+  },
+  "engineStrict": true,
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-angular": "^16.2.3",
+    "@commitlint/config-angular-type-enum": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/gitlab": "^9.5.1",
+    "@semantic-release/npm": "^9.0.1",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "enquirer": "^2.3.6",
+    "husky": "^7.0.4",
+    "multi-semantic-release": "^3.0.1",
+    "simple-git": "^3.7.1"
+  }
+}

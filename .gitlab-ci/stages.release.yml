@@ -1,0 +1,21 @@
+variables:
+  NPM_TOKEN: ${GITLAB_TOKEN}
+
+semantic-release:
+  stage: release
+  variables:
+    GIT_STRATEGY: clone
+  script:
+    - |
+      {
+        echo "@${CI_PROJECT_ROOT_NAMESPACE}:registry=${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/npm/"
+        echo "${CI_API_V4_URL#https?}/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=\${GITLAB_TOKEN}"
+      } | tee -a .npmrc
+    - npm run semantic-release
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - packages/**/*
+  cache: []
+  dependencies:
+    - install

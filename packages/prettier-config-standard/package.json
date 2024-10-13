@@ -1,0 +1,22 @@
+{
+  "name": "@rabtech/prettier-config-standard",
+  "version": "1.0.0",
+  "scripts": {},
+  "description": "rabtech's prettier configuration for shareable config for projects.",
+  "author": {
+    "name": "Francesco Rabezzano",
+    "email": "rabezzano.franesco@gmail.com"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "package.json"
+  ],
+  "peerDependencies": {
+    "prettier": "^2.6.2"
+  },
+  "publishConfig": {
+    "@rabtech:registry": " https://gitlab.com/api/v4/projects/62530839/packages/npm/",
+    "access": "restricted"
+  }
+}

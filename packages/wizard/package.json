@@ -1,0 +1,47 @@
+{
+  "name": "@rabtech/wizard",
+  "version": "1.0.0",
+  "author": {
+    "name": "Francesco Rabezzano",
+    "email": "rabezzano.francesco@gmail.com"
+  },
+  "main": "./lib/wizard.js",
+  "bin": "./bin/wizard",
+  "files": [
+    "bin",
+    "lib",
+    "templates",
+    "README.md",
+    "packages.json"
+  ],
+  "scripts": {
+    "build": "microbundle ./src/index.js --output lib --format cjs --target node",
+    "build:watch": "npm run build -- -w",
+    "format": "prettier ./src --check",
+    "lint": "eslint ./src",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-formatter-gitlab": "^3.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "microbundle": "^0.14.2"
+  },
+  "publishConfig": {
+    "@rabtech:registry": "https://gitlab.com/api/v4/projects/62530839/packages/npm/",
+    "access": "restricted"
+  },
+  "dependencies": {
+    "ansi-colors": "^4.1.1",
+    "commander": "^9.2.0",
+    "enquirer": "^2.3.6",
+    "fs-extra": "^10.1.0",
+    "validate-npm-package-name": "^4.0.0"
+  }
+}
