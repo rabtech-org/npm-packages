@@ -17,6 +17,9 @@ async function buildPkgs() {
 
   /* LEVEL_0: packages that have no dependencies with others local packages and are required in others local packages */
   await Promise.all([...devPackages, build("@rabtech/cz-rabtech")]);
+
+  /* LEVEL_1: packages that have dependencies with LEVEL_0 and are required in other packages */
+  await Promise.all([build("@rabtech/kick-reserve-ui")]);
 }
 
 async function build(pkgName) {
