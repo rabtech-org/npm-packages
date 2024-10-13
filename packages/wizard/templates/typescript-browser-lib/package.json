@@ -1,0 +1,52 @@
+{
+  "name": "{{package-name-scoped}}",
+  "version": "1.0.0",
+  "author": {
+    "name": "Francesco Rabezzano",
+    "email": "rabezzano.francesco@gmail.com"
+  },
+  "sideEffects": false,
+  "main": "./lib/cjs/{{package-name}}.js",
+  "module": "./lib/esm/{{package-name}}.mjs",
+  "types": "./lib/types/index.d.ts",
+  "files": [
+    "lib",
+    "README.md",
+    "packages.json"
+  ],
+  "scripts": {
+    "build": "npm run build:es & npm run build:cjs",
+    "build:watch": "npm run build:es -- -w & npm run build:cjs -- -w",
+    "build:es": "microbundle ./src/index.ts --output lib/esm --format es",
+    "build:cjs": "microbundle ./src/index.ts --output lib/cjs --format cjs --generateTypes=false",
+    "format": "prettier ./src --check",
+    "lint": "eslint ./src",
+    "test": "cross-env NODE_ENV=test jest",
+    "test:watch": "npm run test -- --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-formatter-gitlab": "^3.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "jest": "^28.0.3",
+    "jest-junit": "^13.2.0",
+    "microbundle": "^0.14.2",
+    "ts-jest": "^28.0.1",
+    "typescript": "^4.5.4"
+  },
+  "publishConfig": {
+    "@rabtech:registry": "https://gitlab.com/api/v4/projects/62530839/packages/npm/",
+    "access": "restricted"
+  }
+}

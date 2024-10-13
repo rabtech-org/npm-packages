@@ -1,0 +1,47 @@
+{
+  "name": "@rabtech/cz-rabtech",
+  "version": "1.0.0",
+  "author": {
+    "name": "Francesco Rabezano",
+    "email": "francesco.rabezzano@gamil.com"
+  },
+  "main": "./lib/cz-rabtech.js",
+  "files": [
+    "lib",
+    "README.md",
+    "packages.json"
+  ],
+  "scripts": {
+    "build": "microbundle ./src/index.js ./src/types.js --output lib --format cjs",
+    "build:watch": "npm run build -- -w",
+    "format": "prettier ./src --check",
+    "lint": "eslint ./src",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "boxen": "^5.1.2",
+    "chalk": "^4.1.2",
+    "fuse.js": "^6.5.3",
+    "inquirer-autocomplete-prompt": "^2.0.0",
+    "word-wrap": "^1.2.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-formatter-gitlab": "^3.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "microbundle": "^0.14.2",
+    "prettier": "2.6.2"
+  },
+  "peerDependencies": {
+    "commitizen": "^4.2.4",
+    "prettier": "^2.6.2"
+  },
+  "publishConfig": {
+    "@rabtech:registry": "https://gitlab.com/api/v4/projects/62530839/packages/npm/",
+    "access": "restricted"
+  }
+}

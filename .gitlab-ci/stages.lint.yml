@@ -1,0 +1,31 @@
+variables:
+  ESLINT_CODE_QUALITY_REPORT: eslint_codequality.json
+
+.eslint_job_template: &eslint_job_template
+  stage: lint
+  script:
+    - npm run format -w @rabtech/$PKG_NAME
+    - npm run lint -w @rabtech/$PKG_NAME -- --format gitlab
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - packages/$PKG_NAME/**/*
+  needs:
+    - job: install
+  artifacts:
+    reports:
+      codequality: packages/$PKG_NAME/$ESLINT_CODE_QUALITY_REPORT
+
+##################################
+# Add the packages 'eslint' below
+##################################
+
+eslint:cz-rabtech:
+  variables:
+    PKG_NAME: cz-rabtech
+  <<: *eslint_job_template
+
+eslint:wizard:
+  variables:
+    PKG_NAME: wizard
+  <<: *eslint_job_template

@@ -1,0 +1,19 @@
+.storybook_job_template: &storybook_job_template
+  stage: doc
+  script:
+    - npm run build-storybook -w @rabtech/$PKG_NAME
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - packages/$PKG_NAME/**/*
+  artifacts:
+    name: storybook-$PKG_NAME
+    expire_in: 31d
+    paths:
+      - packages/$PKG_NAME/storybook-static
+  needs:
+    - job: install
+##################################
+# Add the packages below
+##################################
+

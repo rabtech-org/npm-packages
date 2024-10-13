@@ -1,0 +1,67 @@
+{
+  "name": "{{package-name-scoped}}",
+  "version": "1.0.0",
+  "author": {
+    "name": "Francesco Rabezzano",
+    "email": "rabezzano.francesco@gmail.com"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/{{package-name}}.es.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "main": "./dist/{{package-name}}.es.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "packages.json"
+  ],
+  "scripts": {
+    "build": "tsc && vite build",
+    "build:watch": "npm run build -- --watch",
+    "format": "prettier ./src --check",
+    "lint": "eslint ./src",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^14.1.1",
+    "@types/jest": "^27.5.0",
+    "@types/react": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-formatter-gitlab": "^3.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "jest": "^28.0.3",
+    "jest-environment-jsdom": "^28.0.2",
+    "jest-junit": "^13.2.0",
+    "prettier": "^2.6.2",
+    "ts-jest": "^28.0.1",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.5",
+    "vite-plugin-dts": "^1.1.0"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1"
+  },
+  "publishConfig": {
+    "@rabtech:registry": "https://gitlab.com/api/v4/projects/62530839/packages/npm/",
+    "access": "restricted"
+  }
+}

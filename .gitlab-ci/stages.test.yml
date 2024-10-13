@@ -1,0 +1,28 @@
+variables:
+  TEST_ARGS: --config ./jest.config.js --collectCoverage --coverageDirectory="./coverage" --ci --reporters=default --reporters=jest-junit --watchAll=false
+
+.test_job_template: &test_job_template
+  stage: test
+  script:
+    - npm run test -w @rabtech/$PKG_NAME -- $TEST_ARGS
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    name: coverage-$PKG_NAME
+    expire_in: 31d
+    when: always
+    paths:
+      - packages/$PKG_NAME/coverage
+    reports:
+      junit: packages/$PKG_NAME/junit.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: packages/$PKG_NAME/coverage/cobertura-coverage.xml
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - packages/$PKG_NAME/**/*
+  needs:
+    - job: install
+#################################
+# Add the packages 'tests' below
+#################################

@@ -1,0 +1,36 @@
+variables:
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+
+.install_cache:
+  cache:
+    key:
+      files:
+        - package-lock.json
+        - scripts/build-pkgs.js
+    paths:
+      - .npm # npm cache directory
+      - scripts/.cache # .cache file of scripts
+      - packages/**/{dist,lib,node_modules}/* # all files created after npm-ci script
+    policy: pull
+
+install:
+  stage: prepare
+  script:
+    - npm ci
+    - |
+      {
+        echo "@${CI_PROJECT_ROOT_NAMESPACE}:registry=${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/npm/"
+        echo "${CI_API_V4_URL#https?}/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=\${GITLAB_TOKEN}"
+      } | tee -a .npmrc
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - packages/**/*
+  extends: .install_cache
+  cache:
+    policy: pull-push
+  artifacts:
+    expire_in: 12h
+    paths:
+      - node_modules
+      - packages/**/{dist,lib,node_modules}/*
