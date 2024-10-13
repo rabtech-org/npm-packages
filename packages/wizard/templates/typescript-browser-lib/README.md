@@ -10,9 +10,9 @@ npm install {{package-name-scoped}}
 
 ## Development
 
-- **`npm run build`** - built the code once and exits.
-- **`npm run build:watch`** built the code, then re-bundles when files change.
-- **`npm run test`** runs the tests.
-- **`npm run test:watch`** runs tests in watch mode.
-- **`npm run format`** checks files formats with prettier.
-- **`npm run lint`** checks the code with eslint.
+-   **`npm run build`** - built the code once and exits.
+-   **`npm run build:watch`** built the code, then re-bundles when files change.
+-   **`npm run test`** runs the tests.
+-   **`npm run test:watch`** runs tests in watch mode.
+-   **`npm run format`** checks files formats with prettier.
+-   **`npm run lint`** checks the code with eslint.

@@ -1,4 +1,4 @@
 export interface ISum {
-  a: number;
-  b: number;
+    a: number;
+    b: number;
 }
