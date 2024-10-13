@@ -24,7 +24,7 @@
     "rm:node_modules": "npm exec --workspaces -- npx rimraf node_modules && npx rimraf node_modules"
   },
   "engines": {
-    "node": ">=18",
+    "node": ">=20",
     "npm": ">=8"
   },
   "engineStrict": true,
