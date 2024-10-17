@@ -3,7 +3,18 @@ module.exports = {
     env: {
         browser: true,
     },
-    extends: ['airbnb', 'airbnb-typescript', 'plugin:@typescript-eslint/recommended', 'plugin:import/errors', 'plugin:import/recommended', 'plugin:import/typescript', 'plugin:import/warnings', 'prettier', 'plugin:storybook/recommended', 'plugin:storybook/recommended'],
+    extends: [
+        'airbnb',
+        'airbnb-typescript',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:import/errors',
+        'plugin:import/recommended',
+        'plugin:import/typescript',
+        'plugin:import/warnings',
+        'prettier',
+        'plugin:storybook/recommended',
+        'plugin:storybook/recommended',
+    ],
     parser: '@typescript-eslint/parser',
     ignorePatterns: [
         'node_modules',
