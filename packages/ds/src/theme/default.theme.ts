@@ -43,7 +43,7 @@ declare module '@mui/material/Typography' {
     }
 }
 
-const fontFamily = 'Maven Pro, Roboto, Helvetica, Arial, sans-serif';
+const fontFamily = 'Montserrat, Roboto, Helvetica, Arial, sans-serif';
 
 const muiTheme = createTheme({});
 
