@@ -16,9 +16,14 @@ pages:
     - apt-get -y install rsync
     - ls
     - test -e public && cp -r public .public || mkdir .public
+    # ds
+    - test -e packages/ds/coverage && rm -rf .public/coverage/ds && mkdir -p .public/coverage/ds && cp -r packages/ds/coverage/* .public/coverage/ds
     # FINALIZE PUBLIC DIRECTORY
     - rsync -a .public/* public
   needs:
     #
     # COVERAGE PAGES DEPENDENCIES
     #
+    # ds
+    - job: test:ds
+      optional: true

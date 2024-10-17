@@ -29,3 +29,8 @@ eslint:wizard:
   variables:
     PKG_NAME: wizard
   <<: *eslint_job_template
+
+eslint:ds:
+  variables:
+    PKG_NAME: ds
+  <<: *eslint_job_template

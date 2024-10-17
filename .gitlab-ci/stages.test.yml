@@ -26,3 +26,8 @@ variables:
 #################################
 # Add the packages 'tests' below
 #################################
+
+test:ds:
+  variables:
+    PKG_NAME: ds
+  <<: *test_job_template
