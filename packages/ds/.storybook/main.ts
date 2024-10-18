@@ -1,26 +1,31 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
-import { join, dirname } from 'path';
-
-/**
- * This function is used to resolve the absolute path of a package.
- * It is needed in projects that use Yarn PnP or are set up within a monorepo.
- */
-function getAbsolutePath(value: string): any {
-    return dirname(require.resolve(join(value, 'package.json')));
-}
 const config: StorybookConfig = {
     stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
     addons: [
-        getAbsolutePath('@storybook/addon-onboarding'),
-        getAbsolutePath('@storybook/addon-links'),
-        getAbsolutePath('@storybook/addon-essentials'),
-        getAbsolutePath('@chromatic-com/storybook'),
-        getAbsolutePath('@storybook/addon-interactions'),
+        '@storybook/addon-links',
+        '@storybook/addon-essentials',
+        '@storybook/addon-interactions',
     ],
     framework: {
-        name: getAbsolutePath('@storybook/react-vite'),
+        name: '@storybook/react-vite',
         options: {},
+    },
+    docs: {
+        autodocs: true,
+    },
+    typescript: {
+        check: false,
+        reactDocgen: 'react-docgen-typescript',
+        reactDocgenTypescriptOptions: {
+            // makes union prop types like variant and size appear as select controls
+            shouldExtractLiteralValuesFromEnum: true,
+            // makes string and boolean types that can be undefined appear as inputs and switches
+            shouldRemoveUndefinedFromOptional: true,
+            // Filter out third-party props from node_modules except @mui packages
+            propFilter: prop =>
+                prop.parent ? !/node_modules\/(?!@mui)/.test(prop.parent.fileName) : true,
+        },
     },
 };
 export default config;
