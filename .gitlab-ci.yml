@@ -1,7 +1,7 @@
 default:
   image: node:20
   tags:
-    - docker
+    - git-lab-docker
   before_script:
     - node -v
     - npm -v
