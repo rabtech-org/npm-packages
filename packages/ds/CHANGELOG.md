@@ -1,3 +1,10 @@
+# @rabtech/ds [1.1.0](https://gitlab.com/rabtech/kick-reserve-libraries/npm-packages/compare/@rabtech/ds@1.0.0...@rabtech/ds@1.1.0) (2024-10-18)
+
+
+### ✨ Features
+
+* add design system implementation ([86a8a45](https://gitlab.com/rabtech/kick-reserve-libraries/npm-packages/commit/86a8a45b8ad84c44d9aa440c049b34d0867addb0))
+
 # @rabtech/ds 1.0.0 (2024-10-17)
 
 
