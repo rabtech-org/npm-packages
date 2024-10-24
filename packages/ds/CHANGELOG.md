@@ -1,3 +1,10 @@
+## @rabtech/ds [1.1.1](https://gitlab.com/rabtech/kick-reserve-libraries/npm-packages/compare/@rabtech/ds@1.1.0...@rabtech/ds@1.1.1) (2024-10-24)
+
+
+### 🐛 Bug Fixes
+
+* update exports ([5532374](https://gitlab.com/rabtech/kick-reserve-libraries/npm-packages/commit/553237450b0f9fad7a7dfd706d645de91f9192f4))
+
 # @rabtech/ds [1.1.0](https://gitlab.com/rabtech/kick-reserve-libraries/npm-packages/compare/@rabtech/ds@1.0.0...@rabtech/ds@1.1.0) (2024-10-18)
 
 
