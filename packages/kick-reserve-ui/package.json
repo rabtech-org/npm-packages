@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
-    "@rabtech/prettier-config-standard": "^1.0.0",
+    "@rabtech/prettier-config-standard": "1.0.0",
     "@storybook/addon-essentials": "^8.3.5",
     "@storybook/addon-interactions": "^8.3.5",
     "@storybook/addon-links": "^8.3.5",
@@ -85,7 +85,7 @@
     "access": "restricted"
   },
   "dependencies": {
-    "@rabtech/ds": "^1.1.2",
+    "@rabtech/ds": "1.1.2",
     "@storybook/client-api": "^7.6.17"
   }
 }
