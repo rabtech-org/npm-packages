@@ -44,5 +44,8 @@
     "husky": "^7.0.4",
     "multi-semantic-release": "^3.0.1",
     "simple-git": "^3.7.1"
+  },
+  "dependencies": {
+    "@rabtech/ds": "^1.1.0"
   }
 }

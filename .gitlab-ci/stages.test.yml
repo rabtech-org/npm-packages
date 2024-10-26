@@ -26,3 +26,8 @@ variables:
 #################################
 # Add the packages 'tests' below
 #################################
+
+test:kick-reserve-ui:
+  variables:
+    PKG_NAME: kick-reserve-ui
+  <<: *test_job_template
