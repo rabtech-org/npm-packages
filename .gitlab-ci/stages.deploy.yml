@@ -18,6 +18,8 @@ pages:
     - test -e public && cp -r public .public || mkdir .public
     # ds
     - test -e packages/ds/coverage && rm -rf .public/coverage/ds && mkdir -p .public/coverage/ds && cp -r packages/ds/coverage/* .public/coverage/ds
+    # kick-reserve-ui
+    - test -e packages/kick-reserve-ui/coverage && rm -rf .public/coverage/kick-reserve-ui && mkdir -p .public/coverage/kick-reserve-ui && cp -r packages/kick-reserve-ui/coverage/* .public/coverage/kick-reserve-ui
     # FINALIZE PUBLIC DIRECTORY
     - rsync -a .public/* public
   needs:
@@ -26,4 +28,7 @@ pages:
     #
     # ds
     - job: test:ds
+      optional: true
+    # kick-reserve-ui
+    - job: test:kick-reserve-ui
       optional: true
