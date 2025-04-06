@@ -1,3 +1,10 @@
+# @rabtech/ds [1.2.0](https://gitlab.com/rabtech/kick-reserve-libraries/npm-packages/compare/@rabtech/ds@1.1.2...@rabtech/ds@1.2.0) (2025-04-06)
+
+
+### ✨ Features
+
+* update react version ([20d57f2](https://gitlab.com/rabtech/kick-reserve-libraries/npm-packages/commit/20d57f2648241c427bb1c97a47307bb5e773df17))
+
 ## @rabtech/ds [1.1.2](https://gitlab.com/rabtech/kick-reserve-libraries/npm-packages/compare/@rabtech/ds@1.1.1...@rabtech/ds@1.1.2) (2024-10-24)
 
 
