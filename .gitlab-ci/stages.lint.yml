@@ -29,13 +29,3 @@ eslint:wizard:
   variables:
     PKG_NAME: wizard
   <<: *eslint_job_template
-
-eslint:kick-reserve-ui:
-  variables:
-    PKG_NAME: kick-reserve-ui
-  <<: *eslint_job_template
-
-eslint:kick-reserve-ui:
-  variables:
-    PKG_NAME: kick-reserve-ui
-  <<: *eslint_job_template
