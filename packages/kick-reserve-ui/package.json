@@ -42,7 +42,7 @@
     "@storybook/react-vite": "^8.3.5",
     "@storybook/test": "^8.3.5",
     "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.1.1",
+    "@testing-library/react": "16.3.0",
     "@testing-library/user-event": "^14.1.1",
     "@types/jest": "^27.5.0",
     "@types/react": "^18.0.0",
@@ -69,16 +69,6 @@
     "ts-jest": "^28.0.1",
     "typescript": "^4.6.4",
     "vite-plugin-dts": "^1.1.0"
-  },
-  "peerDependencies": {
-    "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0",
-    "@mui/material": "^6.1.4",
-    "@mui/system": "^6.1.4",
-    "react": "^18.3.1",
-    "react-intl": "^6.8.0",
-    "react-router-dom": "^6.27.0",
-    "vite": "^5.4.9"
   },
   "publishConfig": {
     "@rabtech:registry": "https://gitlab.com/api/v4/projects/62530839/packages/npm/",
