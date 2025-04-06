@@ -1,3 +1,10 @@
+## @rabtech/ds [1.2.1](https://gitlab.com/rabtech/kick-reserve-libraries/npm-packages/compare/@rabtech/ds@1.2.0...@rabtech/ds@1.2.1) (2025-04-06)
+
+
+### 🐛 Bug Fixes
+
+* update vite version ([e097a62](https://gitlab.com/rabtech/kick-reserve-libraries/npm-packages/commit/e097a623f7619ebb2ddb4bac1ab8d8efde58a8c7))
+
 # @rabtech/ds [1.2.0](https://gitlab.com/rabtech/kick-reserve-libraries/npm-packages/compare/@rabtech/ds@1.1.2...@rabtech/ds@1.2.0) (2025-04-06)
 
 
