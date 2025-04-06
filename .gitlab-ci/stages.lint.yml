@@ -35,7 +35,7 @@ eslint:kick-reserve-ui:
     PKG_NAME: kick-reserve-ui
   <<: *eslint_job_template
 
-eslint:kick-reserve-ui:
+eslint:ds:
   variables:
-    PKG_NAME: kick-reserve-ui
+    PKG_NAME: ds
   <<: *eslint_job_template
