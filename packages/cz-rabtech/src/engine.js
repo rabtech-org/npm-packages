@@ -1,9 +1,9 @@
-import wrap from 'word-wrap';
-import { green, red, underline, gray, yellow } from 'chalk';
 import boxen from 'boxen';
-import inquirerAutocompletePrompt from 'inquirer-autocomplete-prompt';
-import Fuse from 'fuse.js';
+import { gray, green, red, underline, yellow } from 'chalk';
 import fs from 'fs';
+import Fuse from 'fuse.js';
+import inquirerAutocompletePrompt from 'inquirer-autocomplete-prompt';
+import wrap from 'word-wrap';
 
 const filter = array => array.filter(x => x);
 
@@ -42,7 +42,7 @@ export default options => {
     const scopes = [
         ...{ name: '[skip]', value: '' },
         ...{ name: '[all packages]', value: 'root' },
-        ...fs.readdirSync('./packages').map(name => ({ name })),
+        ...fs.readdirSync('./packages' || '.').map(name => ({ name })),
     ];
 
     const fuzzyOptions = {
