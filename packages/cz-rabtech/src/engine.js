@@ -42,7 +42,7 @@ export default options => {
     const scopes = [
         ...{ name: '[skip]', value: '' },
         ...{ name: '[all packages]', value: 'root' },
-        ...fs.readdirSync('./packages' || '.').map(name => ({ name })),
+        ...fs.readdirSync('./packages').map(name => ({ name })),
     ];
 
     const fuzzyOptions = {
